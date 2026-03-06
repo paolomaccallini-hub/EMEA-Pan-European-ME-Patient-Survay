@@ -2,8 +2,8 @@
 
 ## Abstract
 
-Raw data from the EMEA Pan-European ME Patient Survey were analysed by several methods, including local outlier factor (LOF), supervised and unsupervised Machine Learning (ML), and bimodal fit of age at first symptoms. A total of 9,596 subjects were considered, including three patients added to the original data set. Age at first symptoms for males with ME/CFS displays a statistically significant fit with a gamma bimodal density, with about 60% of the subjects developing the disease at a mean age of 27 (sd = 13) and 40% at a mean age of 40 (sd = 8). 
-
+Raw data from the EMEA Pan-European ME Patient Survey were analysed by several methods, including local outlier factor (LOF), supervised and unsupervised Machine Learning (ML), and bimodal fit of age at first symptoms. A total of 9,596 subjects were considered, including three patients added to the original data set. Age at first symptoms for males with ME/CFS displays a statistically significant fit with a gamma bimodal density, with about 60% of the subjects developing the disease at a mean age of 27 (sd = 13) and 40% at a mean age of 40 (sd = 8). Males who develop the disease earlier in their lives experience more sensitivity, dizziness, and sleep problems, but less pain. They are more severe. Females have more comorbidities overall, they have more PEM, and are less likely to be stable. Females are also less likely to begin the disease after an infection, but more likely to indicate vaccination as the triggering event. Despite these differences, females are not more severe and more fatigued than males. LOF analysis identified 480 outliers (5%) who display an increased prevalence of deterioration over time, are less likely to develop the disease after an infection, and have first symptoms at a younger age. Logistic regression and Naive Bayes models were built for the identification of housebound patients (AUC 84%), outliers (AUC 88%), and subjects who tend to deteriorate over time (AUC 76%).  
+ 
 ## Methods
 
 ### Data source
@@ -74,7 +74,7 @@ I searched for outliers among patients by using the local outlier factor (LOF) a
 
 ### Correlations
 
-Correlation tables between variables were computed using the Spearman coefficient. Only significant correlations were reported (two-sided test, cut-off for significance of 0.05). I employed the package `corplot`.
+Correlation tables between variables were computed using the Spearman coefficient. Only significant correlations were reported (two-sided test, cut-off for significance of 0.05). I employed the package `corplot`. P
 
 ### Comparisons
 
@@ -86,7 +86,7 @@ I trained both a Naive Bayes and a Logistic regression model to recognise indivi
 
 ### Unsupervised classification and PCA
 
-To search for clusters in an unbiased way, I used the function `pam()` of the package `cluster`. Also, Principal Component Analysis (PCA) was performed by the function `princomp()` of the package `stats`, and visualisation of the principal planes and distribution of the variance across the components by both a custom script andthe  function `biplot()` of the same package.
+To search for clusters in an unbiased way, I used the function `pam()` of the package `cluster`. Also, Principal Component Analysis (PCA) was performed by the function `princomp()` of the package `stats`, and visualisation of the principal planes and distribution of the variance across the components by both a custom script and the  function `biplot()` of the same package.
 
 ## Results
 
@@ -403,7 +403,7 @@ I applied three of the classifiers discussed above to the supplementary patients
 
 #### Unsupervised clustering
 
-Partitioning (clustering) of the data into k clusters around medoids, for k from 2 to 7, failed at finding separated clusters (see folder [Unsupervised](Unsupervised/) for details).
+Partitioning (clustering) of the data into k clusters around medoids, for k from 2 to 7, failed at finding separated clusters (see folder [Unsupervised](Unsupervised/) for details). Principal Component Analysis provides little contribution to this analysis because 80% of the total variance is distributed across 16 principal components (Figure 3).
 
 # Discussion
 
