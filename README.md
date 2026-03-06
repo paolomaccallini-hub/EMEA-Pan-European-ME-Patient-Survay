@@ -280,7 +280,9 @@ In Table 7, I compared outliers (LOF above the 0.9 quantile) with the others. Ou
   <em> Table 6. Comparison between patients with LOF above the 0.95 quantile (outliers) and the others (common). </em>
 </p>
 
-### Supervised classification of severity
+### Machine Learning
+
+#### Supervised classification of severity
 
 The performances of the logistic and Naive Bayes models in predicting the severity of the patients from the other variables are documented in Figures 5 and 6, respectively. The logistic classifier shows a better profile: using as a cut-off a predicted probability of 0.75, it reaches a sensitivity and a specificity of 0.75.
 
@@ -314,9 +316,9 @@ The significant coefficients of the logistic regression applied to all the avail
   <em> Table 8. Significant coefficients of the logistic regression between a binary variable for severity (1 if house-bound or worse, 0 otherwise) and all the available variables. </em>
 </p>
 
-### Supervised classification of outliers
+#### Supervised classification of outliers
 
-I also trained two models (logistic regression and Naive Bayes) to predict LOF. Their performances in predicting outliers (LOF>0.95th percentile) are reported in Figures 7 and 8, respectively.
+I also trained two models (logistic regression and Naive Bayes) to predict LOF. Their performances in predicting outliers (LOF>0.95th percentile) are reported in Figures 7 and 8, respectively. Naive-Bays outperforms logistic regression in this case.
 
 <img src="https://github.com/user-attachments/assets/69a52aa7-3e4e-4578-9843-b5262ae122b7" width="800" alt="Supervised_log_Resampling_lof">
 <p align="left">
@@ -328,14 +330,26 @@ I also trained two models (logistic regression and Naive Bayes) to predict LOF. 
   <em>Figure 8. Performances of a Naive Bayes model, with LOF as the outcome variable (its value is one for LOF above the 95th percentile, zero otherwise). See Figure 7 for details. </em>
 </p>
 
+The significant coefficients of the logistic regression are indicated below (Table 9). We see that fatigue, sensitivity, pain, and PEM predict non-outlier status. A younger age at first symptoms predicts outlier status, as well as severity. Fluctuations or stability in disease course predict non-outlier status. 
 
+| Variable | Estimate | Std. Error | z value | p-value | Sig |
+|---------|---------|-----------|--------|--------|-----|
+| fatigue_n | -0.375022 | 0.068515 | -5.474 | 4.41e-08 | *** |
+| muscleorjointpain_n | -0.239960 | 0.050479 | -4.754 | 2.00e-06 | *** |
+| sensitivity_n | 0.107491 | 0.052813 | 2.035 | 0.04182 | * |
+| pem_n | -0.735165 | 0.055192 | -13.320 | <2e-16 | *** |
+| interstitialcystitis_n | 0.503695 | 0.232031 | 2.171 | 0.02995 | * |
+| severity_n | 0.463162 | 0.079351 | 5.837 | 5.32e-09 | *** |
+| age_ill | -0.074715 | 0.004436 | -16.842 | <2e-16 | *** |
+| age | 0.093339 | 0.004700 | 19.861 | <2e-16 | *** |
+| stable_n | -0.428085 | 0.154072 | -2.778 | 0.00546 | ** |
+| fluctuating_n | -0.297612 | 0.140359 | -2.120 | 0.03398 | * |
 
+<p align="left">
+  <em> Table 9. Significant coefficients that predict outlier status (1 for outlier, 0 for non-outlier) using a logistic regression. </em>
+</p>
 
-
-
-
-
-### Supervised classification of deterioration
+#### Supervised classification of deterioration
 
 I trained the logistic and the Naive Bayes models to recognise subjects who deteriorate over time, using as an outcome a binary variable whose value is one when course_n is  5 (fluctuating initially, then mostly deterioration) or 7 (mainly deterioration), zero otherwise. The performances of the two models, evaluated by resampling, are described by Figures 9 and 10.
 
@@ -349,19 +363,47 @@ I trained the logistic and the Naive Bayes models to recognise subjects who dete
   <em>Figure 8. Performances of a Naive Bayes model. See Figure 9 for details. </em>
 </p>
 
-### Prediction for three patients
+The significant coefficients of the logistic regression are in Table 10. Positive predictors of deterioration are pain, fatigue, dizziness, sleep problems, PEM, Fibromyalgia, IBS, asthma, and disease severity. Having relatives with ME is a protective factor against deterioration, as well as a younger age at first symptoms. 
 
-When we apply the logistic regression to the three supplementary subjects (see folder [Supplementary Cases](Supplementary%20Cases/)), we obtain the following results, and we see that this model performs poorly for PT3, who defined himself as mostly bedridden.
-
-| Patient | Outlier | Prediction | Housebound | Prediction |
-|:--------|--------:|-----------:|-----------:|-----------:|
-| PT1     | Yes     |            | Yes        | 0.87       |
-| PT2     | No      |            | Yes        | 0.83       |
-| PT2     | No      |            | Yes        | 0.4        |
+| Variable | Estimate | p-value | Significance |
+|---------|---------|--------|-------------|
+| Intercept | -9.27 | <2e-16 | *** |
+| Relatives with ME | -0.19 | 0.004 | ** |
+| Fatigue | 0.29 | 6.62e-14 | *** |
+| Muscle or Joint Pain | 0.08 | 0.00021 | *** |
+| Dizziness | 0.07 | 0.00032 | *** |
+| Sleep Problems | 0.11 | 4.37e-06 | *** |
+| Post-Exertional Malaise (PEM) | 0.17 | 7.04e-06 | *** |
+| Fibromyalgia | 0.21 | 0.00011 | *** |
+| Irritable Bowel Syndrome | 0.17 | 0.00062 | *** |
+| Allergies | -0.16 | 0.0016 | ** |
+| Asthma | 0.14 | 0.027 | * |
+| Disease Severity | 1.03 | <2e-16 | *** |
+| Age at Illness Onset | -0.005 | 0.041 | * |
+| Age | 0.009 | 0.00020 | *** |
+| LOF | 1.37 | 2.84e-09 | *** |
 
 <p align="left">
-  <em>Table 2. Parameters of the two gamma densities whose combination fits the distribution of age at first symptoms. Stratification by sex. </em>
+  <em> Table 10. Significant coefficients that predict deterioration status (1 for deterioration, 0 otherwise) using a logistic regression. </em>
 </p>
+
+#### Prediction for three patients
+
+I applied three of the classifiers discussed above to the supplementary patients included in folder [Supplementary Cases](Supplementary%20Cases/) (Table 11). The cut-off for the three classifiers employed is as follows: 75% for the housebound status predictor (logistic, Figure 5), 5% for the outlier classifier (NB model of Figure 8), and 50% for the classifier of deterioration (logistic regression of Figure 9) 
+
+| Patient | Outlier | Prediction | Housebound | Prediction | Deteriorating | Prediction |
+|:--------|--------:|-----------:|-----------:|-----------:|--------------:|-----------:|
+| PT1     | Yes     | Yes (10%)  | Yes        | Yes (87%)  | No            | No (45%)   |
+| PT2     | No      | No (4%)    | Yes        | Yes (83%)  | Yes           | Yes (65%)  |
+| PT2     | No      | No (1%)    | Yes        | No (40%)   | No            | Yes (58%)  |
+
+<p align="left">
+  <em>Table 2. Predictions about outlier status, deterioration, and severity for the three patients included in folder [Supplementary Cases](Supplementary%20Cases/). </em>
+</p>
+
+#### Unsupervised clustering
+
+Partitioning (clustering) of the data into k clusters around medoids, for k from 2 to 7, failed at finding separated clusters (see folder [Unsupervised](Unsupervised/) for details).
 
 # Discussion
 
