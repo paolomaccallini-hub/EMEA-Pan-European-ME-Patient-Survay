@@ -116,7 +116,7 @@ The parameters of the two gamma densities for females, males, nd both sexes are 
 
 ### Local outlier factor and PCA
 
-The distribution of the Local Outlier Factor (LOF) is shown in Figure 2, where the LOF of patient PT1 (Table 9) is also indicated by a red line. We see that this patient is an outlier because it displays an LOF that is greater than the 0.95 quantile of the distribution. This patient is a 46 yo male who got sick in his twenties and who has been housebound for most of the disease course. He also has low myalgia and high dizziness. According to this analysis, either he has another disease, or he is a case of monogenic ME/CFS (see discussion section). For the analogous plots of the other two added patients, see the file section.
+The distribution of the Local Outlier Factor (LOF) is shown in Figure 2, where the LOF of patient PT1 (folder [Supplementary Cases](Supplementary%20Cases/)) is also indicated by a red line. We see that this patient is an outlier because it displays an LOF that is greater than the 0.95 quantile of the distribution. This patient is a 46 yo male who got sick in his twenties and who has been housebound for most of the disease course. He also has low myalgia and high dizziness. According to this analysis, either he has another disease, or he is a case of monogenic ME/CFS (see discussion section). For the analogous plots of the other two added patients, see the file section.
 
 <img src="https://github.com/user-attachments/assets/315558bb-ed4f-4ac9-adf6-c2cc6cd79477" width="1000" alt="LOF_histogram_9554">
 <p align="left">
