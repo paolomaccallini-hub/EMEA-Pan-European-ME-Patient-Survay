@@ -289,7 +289,7 @@ The performances of the logistic and Naive Bayes models in predicting the severi
   <em>Figure 5. Performances of a logistic regression, with severity as the outcome variable (its value is one for patients who are housebound or worse, zero otherwise). For each value of the cut-off of the predicted probability used to classify the subject, resampling was randomly performed 40 times; then, mean sensitivity and specificity were calculated and plotted. Left: sensitivity, specificity, accuracy, type I error (ERI), and type II error (ERII) are plotted as a function of the predictive-probability cut-off. Right: Sensitivity is plotted as a function of false positive rate. </em>
 </p>
 
-<img src="https://github.com/user-attachments/assets/91e78ec5-f882-4cb6-9d58-4a87b248fde0" width="800" alt="Supervised_NB_Resampling_severity_n">
+<img src="https://github.com/user-attachments/assets/9245da43-510b-4299-80d2-069586fa4ebf" width="800" alt="Supervised_NB_Resampling_severity_n">
 <p align="left">
   <em>Figure 6. Performances of a Naive Bayes supervised classification, with severity as exit variable. For details, see the caption of Figure 5. </em>
 </p>
@@ -331,9 +331,27 @@ I also trained two models (logistic regression and Naive Bayes) to predict LOF. 
 
 
 
+
+
+
+
+### Supervised classification of deterioration
+
+I trained the logistic and the Naive Bayes models to recognise subjects who deteriorate over time, using as an outcome a binary variable whose value is one when course_n is  5 (fluctuating initially, then mostly deterioration) or 7 (mainly deterioration), zero otherwise. The performances of the two models, evaluated by resampling, are described by Figures 9 and 10.
+
+<img src="https://github.com/user-attachments/assets/12e4d3e3-d56a-4155-ae17-5d0390cf3a9c" width="800" alt="Supervised_log_Resampling_course_n">
+<p align="left">
+  <em>Figure 9. Performances of a logistic regression, using as an outcome a binary variable whose value is one when course_n is  5 (fluctuating initially, then mostly deterioration) or 7 (mainly deterioration), zero otherwise. For each value of the cut-off of the predicted probability used to classify the subject, resampling was randomly performed 40 times. Next, the mean sensitivity and specificity were calculated and plotted. Left: sensitivity, specificity, accuracy, type I error (ERI), and type II error (ERII) are plotted as a function of the predictive-probability cut-off. Right: Sensitivity is plotted as a function of false positive rate. </em>
+</p>
+
+<img src="https://github.com/user-attachments/assets/f796cd9c-842d-48b9-94b1-69c1f721d100" width="800" alt="Supervised_NB_Resampling_course_n">
+<p align="left">
+  <em>Figure 8. Performances of a Naive Bayes model. See Figure 9 for details. </em>
+</p>
+
 ### Prediction for three patients
 
-When we apply the logistic regression to the three supplementary subjects (see folder [Supplementary Cases](Supplementary Cases/)), we obtain the following results, and we see that this model performs poorly for PT3, who defined himself as mostly bedridden.
+When we apply the logistic regression to the three supplementary subjects (see folder [Supplementary Cases](Supplementary%20Cases/)), we obtain the following results, and we see that this model performs poorly for PT3, who defined himself as mostly bedridden.
 
 | Patient | Outlier | Prediction | Housebound | Prediction |
 |:--------|--------:|-----------:|-----------:|-----------:|
