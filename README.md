@@ -1,4 +1,4 @@
-# Reanalysis of the EMEA Pan-European ME Patient Survey by Machine Learning, Bimodal analysis, and Local Outlier Factor
+# Reanalysis of the EMEA Pan-European ME Patient Survey by Machine Learning, Bimodal Analysis, and Local Outlier Factor
 
 ## Abstract
 
