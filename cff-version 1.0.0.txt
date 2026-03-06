@@ -1,0 +1,6 @@
+cff-version: 1.0.0
+title: EMEA Pan-European ME Patient Survey Dataset
+authors:
+  - family-names: Maccallini
+    given-names: Paolo
+date-released: 2026
