@@ -398,7 +398,7 @@ I applied three of the classifiers discussed above to the supplementary patients
 | PT3     | No      | No (1%)    | Yes        | No (40%)   | No            | Yes (58%)  |
 
 <p align="left">
-  <em>Table 2. Predictions about outlier status, deterioration, and severity for the three patients included in folder [Supplementary Cases](Supplementary%20Cases/). </em>
+  <em>Table 11. Predictions about outlier status, deterioration, and severity for the three patients included in folder [Supplementary Cases](Supplementary%20Cases/). </em>
 </p>
 
 #### Unsupervised clustering
