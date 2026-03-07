@@ -82,11 +82,11 @@ Subjects were divided into two groups by various criteria (males vs females, out
 
 ### Supervised classification
 
-I trained both a Naive Bayes and a Logistic regression model to recognise individuals who are mostly housebound to very severe (`severity_n` above 4). For both models, I estimated ean sensitivity, specificity, and accuracy as a function of the threshold of the predicted probability used for classification. I used the same approach to test logistic regression and Naive Bayes to predict patients who deteriorate. I then applied the two logistic models to the three added patients.
+I trained both a Naive Bayes and a Logistic regression model to recognise individuals who are mostly housebound to very severe (`severity_n` above 4). For both models, I estimated mean sensitivity, specificity, and accuracy as a function of the threshold of the predicted probability used for classification. I used the same approach to test logistic regression and Naive Bayes to predict patients who deteriorate. I then applied the two logistic models to the three added patients.
 
 ### Unsupervised classification and PCA
 
-To search for clusters in an unbiased way, I used the function `pam()` of the package `cluster`. Also, Principal Component Analysis (PCA) was performed by the function `princomp()` of the package `stats`, and visualisation of the principal planes and distribution of the variance across the components by both a custom script and the  function `biplot()` of the same package.
+To search for clusters in an unbiased way, I used the `pam()` function from the `cluster` package. Also, Principal Component Analysis (PCA) was performed using the `princomp()` function from the `stats` package, and the principal planes and the distribution of variance across the components were visualised using both a custom script and the `biplot()` function from the same package.
 
 ## Results
 
@@ -255,7 +255,7 @@ ME/CFS patients with affected relatives (Table 6) have a longer disease duration
   <em> Table 6. Comparison between patients with and patients without affected relatives. </em>
 </p>
 
-In Table 7, I compared outliers (LOF above the 0.9 quantile) with the others. Outliers display an increased prevalence of deterioration over time, are less likely to develop the disease after an infection, and have first symptoms at a younger age. They have less fatigue and less PEM. Variances are larger among outliers, suggesting that they do not define a homogeneous group.
+In Table 7, I compared outliers (LOF above the 0.9 quantile) with the others. Outliers display an increased prevalence of deterioration over time, are less likely to develop the disease after an infection, and have their first symptoms at a younger age. They have less fatigue and less PEM. Variances are larger among outliers, suggesting that they do not define a homogeneous group.
 
 | Variable                      | common (n=9116)    | outliers (n=480)   | P-value      | Adjusted P-value |
 |:------------------------------|-------------------:|-------------------:|-------------:|-----------------:|
