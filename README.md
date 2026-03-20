@@ -107,7 +107,7 @@ The bimodal fit based on two gamma densities for the age at onset was significan
   <em>Figure 1. Gamma bimodal fit of age at first symptoms, performed by maximum likelihood estimation (MLE) by the function `mixfit()` of the R package `mixR`. The two-sided Kolmogorov-Smirnov test was used to test the null: the distribution comes from the fitted density. </em>
 </p>
 
-The parameters of the two gamma densities for females, males, nd both sexes are reported in Table 2. For the analogous results of the lognormal distribution, see the files in the repository. Remember that only for males, the bimodal density significantly fits the data.
+The parameters of the two gamma densities for females, males, and both sexes are reported in Table 2. For the analogous results of the lognormal and normal distributions, see the files in the repository. Remember that only for males, the bimodal density significantly fits the data.
 
 | Group               | Proportion | Mean  | SD   |
 |---------------------|-----------:|------:|-----:|
